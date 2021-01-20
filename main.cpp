@@ -1,21 +1,29 @@
+#include "game.hpp"
 #include <iostream>
+#include <string>
 
 
+ 
 
 
-int numberOfPlayers;
-std::string boardSize;
+/* int numberOfPlayers;
+std::string boardSize; */
+bool gameOver = false;
 
 int main(){
-    //enter player names, store them in player variables
-    std::cout << "How many players? (1-3)"  << std::endl;
-    std::cin >> numberOfPlayers;
+    //how many playes, multiplayer?, 
+    Game game;
+    game.init();
+    game.printBoard();
+    while (!gameOver){
+        game.update(gameOver);
+        game.checkWin();
+    }
+
 
     //ask for board size, 3x3, 5x5
-    std::cout << "What size board to play on? (3 x 3 or 5 x 5)" << std::endl;
-    std::cin >> boardSize;
+
     //ask for symbols
-    std::cout << "What symbol/character for "; //<< playerOne << 
 
     //maybe confirm or option to redo steps
     //init and print board to screen
