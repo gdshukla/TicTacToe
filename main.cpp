@@ -1,4 +1,5 @@
-#include "game.hpp"
+
+#include "board.hpp"
 #include <iostream>
 #include <string>
 
@@ -17,7 +18,7 @@ int main(){
     game.printBoard();
     while (!gameOver){
         game.update(gameOver);
-        game.checkWin();
+        game.checkWin( _board3[board3Y-1][board3X-1], _board5[board5Y-1][board5X-1]);
     }
 
 

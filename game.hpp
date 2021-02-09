@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+//#include <vector>
 #include <string>
 
 
@@ -10,7 +10,7 @@ public:
     void init();
     void printBoard();
     void update(bool &gameOver);
-    void checkWin();
+    void checkWin(char _board3,char _board5);
     //int getNumberOfPlayers(){ return _numberOfPlayers;}
 
 
