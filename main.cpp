@@ -1,5 +1,5 @@
 
-#include "board.hpp"
+#include "game.hpp"
 #include <iostream>
 #include <string>
 
@@ -14,11 +14,12 @@ bool gameOver = false;
 int main(){
     //how many playes, multiplayer?, 
     Game game;
+    
     game.init();
     game.printBoard();
     while (!gameOver){
         game.update(gameOver);
-        game.checkWin( _board3[board3Y-1][board3X-1], _board5[board5Y-1][board5X-1]);
+        game.checkWin(_board3, _board5);
     }
 
 
