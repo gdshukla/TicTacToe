@@ -62,7 +62,7 @@ public:
         return playerTwoSymbol;
     }
     void updatePlayerOne(int BoardSize, int NumberOfPlayers, char _board3[board3Y][board3X], char _board5[board5Y][board5X]){
-    char moveLetter;
+    char moveLetter; //todo pass player as arg for function
     char moveNumber;
     int imoveLetter, imoveNumber;
     std::cout << "\t" << playerOneName << ", place your symbol." << std::endl;
@@ -216,4 +216,4 @@ public:
     }
 
     //todo check win condition with loop
-} player;
+} ;

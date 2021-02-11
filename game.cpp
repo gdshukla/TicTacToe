@@ -1,5 +1,5 @@
 #include "game.hpp"
-#include "player.hpp"
+//#include "player.hpp"
 
 #include <iostream>
 //#include <string>
@@ -8,7 +8,7 @@
 Game::Game(){
     
 }
-void Game::init(){
+void Game::init(Player player){
     std::cout << "** Tic Tac Toe **" << std::endl;
     _numberOfPlayers = player.getPlayerNumber();
 
@@ -48,7 +48,7 @@ void Game::printBoard(){
     }
         
 }
-void Game::update(bool &gameOver){
+void Game::update(bool &gameOver, Player &player){
     player.updatePlayerOne(_boardSize, _numberOfPlayers, _board3, _board5);
     printBoard();
     if (_numberOfPlayers == 2){
@@ -59,7 +59,7 @@ void Game::update(bool &gameOver){
 
 }
 
-void Game::checkWin(char _board3[board3Y][board3X], char _board5[board5Y][board5X]){
+void Game::checkWin(char _board3[board3Y][board3X], char _board5[board5Y][board5X], Player player){
     if(_boardSize == 3){
         //todo check for win condition for 3x3
         for(int y = 0; y < 3; y++){

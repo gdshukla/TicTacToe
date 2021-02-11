@@ -14,12 +14,12 @@ bool gameOver = false;
 int main(){
     //how many playes, multiplayer?, 
     Game game;
-    
-    game.init();
+    Player player;
+    game.init(player);
     game.printBoard();
     while (!gameOver){
-        game.update(gameOver);
-        game.checkWin(_board3, _board5);
+        game.update(gameOver, player);
+        game.checkWin(_board3, _board5, player);
     }
 
 
