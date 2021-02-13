@@ -2,11 +2,11 @@
 #include <iostream>
 
 
- static const int board3Y = 3, board3X = 3, board5Y = 5, board5X = 5;
- static char _board3[board3Y][board3X];
- static char _board5[board5Y][board5X];
+ static const int rows3 = 2, cols3 = 2, rows5 = 4, cols5 = 4;
+ char _board3[rows3][cols3];
+ char _board5[rows5][cols5];
 
-int inline getBoardSize(char &check2, int &_boardSize){
+void inline getBoardSize(char &check2, int &_boardSize){
     std::cout << "What size game?  (Enter a 3 for a 3 x 3 game, or 5 for a 5 x 5 game)" << std::endl;
     int input;
     std::cin >> input;
@@ -17,8 +17,8 @@ int inline getBoardSize(char &check2, int &_boardSize){
         check2 = 'F';
         std::cin.clear();
         std::cin.ignore(10000,'\n');
-        _boardSize = board3Y; // board3Y is just so it's not hardcoded to 3, Y because board x,y might be different, not sure yet
-        return _boardSize;
+        _boardSize = rows3; // rows3 is just so it's not hardcoded to 3, Y because board x,y might be different, not sure yet
+        
         break;
             // 2, 5 are for board size 5 x 5, people might press 2 or 5
         case 2:
@@ -26,27 +26,27 @@ int inline getBoardSize(char &check2, int &_boardSize){
         check2 = 'F';
         std::cin.clear();
         std::cin.ignore(10000,'\n');
-        _boardSize = board5Y; // board5Y is just so it's not hardcoded to 5, Y because board x,y might be different, not sure yet
-        return _boardSize;
+        _boardSize = rows5; // rows5 is just so it's not hardcoded to 5, Y because board x,y might be different, not sure yet
+        
         break;
         default:
         std::cin.clear();
         std::cin.ignore(10000,'\n');
         std::cout << "That input doesn't make sense!" << std::endl;
-        return _boardSize;
+        
         break;
     }
-    return _boardSize;
+    
 
 }
 
-void inline boardInit(int &_boardSize, char _board3[board3Y][board3X], char _board5[board5Y][board5X], char &check){
+void inline boardInit(int &_boardSize, char _board3[][cols3], char _board5[][cols5], char &check){
 
 
-        if (_boardSize == board3Y){
+        if (_boardSize == rows3){
 
-            for (int y = 0; y < board3Y; y++){
-                for (int x = 0; x < board3Y; x++) {
+            for (int y = 0; y < rows3; y++){
+                for (int x = 0; x < rows3; x++) {
                     if ((x % 2) == 0){
                         _board3[y][x] = '.';
                     } else {
@@ -57,9 +57,9 @@ void inline boardInit(int &_boardSize, char _board3[board3Y][board3X], char _boa
             check = 'F';
             return;
         }
-        else if (_boardSize == board5Y){
-            for (int y = 0; y <= board5Y; y++){
-                for (int x = 0; x <= board5Y; x++) {
+        else if (_boardSize == rows5){
+            for (int y = 0; y <= rows5; y++){
+                for (int x = 0; x <= rows5; x++) {
                     if ((x % 2) == 0){
                         _board5[y][x] = '.';
                     } else {

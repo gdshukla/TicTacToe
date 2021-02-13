@@ -8,18 +8,18 @@
 Game::Game(){
     
 }
-void Game::init(Player player){
+void Game::init(Player& player){
     std::cout << "** Tic Tac Toe **" << std::endl;
     _numberOfPlayers = player.getPlayerNumber();
 
     char check2 = 'T';  //switch check to 'F' inside boardInit() to exit while loop
     while (check2 == 'T'){
-    _boardSize = getBoardSize(check2, _boardSize);
+    getBoardSize(check2, _boardSize);
     }
 
     char check = 'T';  //switch check to 'F' inside boardInit() to exit while loop
     while (check == 'T'){
-    boardInit(_boardSize, _board3, _board5, check);
+    boardInit(_boardSize,  _board3, _board5, check);
     }
 
     player.getPlayerOneName();
@@ -48,7 +48,7 @@ void Game::printBoard(){
     }
         
 }
-void Game::update(bool &gameOver, Player &player){
+void Game::update(bool &gameOver, char (&_board3)[rows3][cols3],char (&_board5)[rows5][cols5], Player &player){
     player.updatePlayerOne(_boardSize, _numberOfPlayers, _board3, _board5);
     printBoard();
     if (_numberOfPlayers == 2){
@@ -59,7 +59,7 @@ void Game::update(bool &gameOver, Player &player){
 
 }
 
-void Game::checkWin(char _board3[board3Y][board3X], char _board5[board5Y][board5X], Player player){
+void Game::checkWin(char _board3[rows3][cols3], char _board5[rows5][cols5], Player &player){
     if(_boardSize == 3){
         //todo check for win condition for 3x3
         for(int y = 0; y < 3; y++){

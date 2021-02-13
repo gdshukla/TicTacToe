@@ -8,10 +8,10 @@
 class Game {
 public:
     Game();
-    void init(Player player);
+    void init(Player &player);
     void printBoard();
-    void update(bool &gameOver, Player &player);
-    void checkWin(char _board3[board3Y][board3X], char _board5[board5Y][board5X], Player player);
+    void update(bool &gameOver, char (&_board3)[rows3][cols3],char (&_board5)[rows5][cols5], Player &player);
+    void checkWin(char _board3[rows3][cols3], char _board5[rows5][cols5], Player &player);
     //int getNumberOfPlayers(){ return _numberOfPlayers;}
 
 
