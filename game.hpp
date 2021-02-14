@@ -20,6 +20,8 @@ public:
     int _boardSize;
 
 
+    char _board3[rows3][cols3];
+    char _board5[rows5][cols5];
 
 
 

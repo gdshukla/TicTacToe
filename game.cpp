@@ -31,16 +31,16 @@ void Game::init(Player& player){
 
 }
 void Game::printBoard(){
-    if (_boardSize == 3){
-        for (int y = 0; y < 3; y++){
-            for (int x = 0; x < 3; x++){
+    if (_boardSize == rows3){
+        for (int y = 0; y < rows3; y++){
+            for (int x = 0; x < rows3; x++){
                 std::cout << _board3[y][x];
             }
             std::cout << std::endl;
         }
-    } else if (_boardSize == 5){
-        for (int y = 0; y < 5; y++){
-            for (int x = 0; x < 5; x++){
+    } else if(_boardSize == rows5){
+        for (int y = 0; y < rows5; y++){
+            for (int x = 0; x < rows5; x++){
                 std::cout << _board5[y][x];
             }
             std::cout << std::endl;
@@ -55,24 +55,25 @@ void Game::update(bool &gameOver, char (&_board3)[rows3][cols3],char (&_board5)[
         player.updatePlayerTwo(_boardSize, _numberOfPlayers, _board3, _board5);
         printBoard();
     }
-    
+    return;
 
 }
 
 void Game::checkWin(char _board3[rows3][cols3], char _board5[rows5][cols5], Player &player){
-    if(_boardSize == 3){
+    if(_boardSize == rows3){
         //todo check for win condition for 3x3
         for(int y = 0; y < 3; y++){
             for(int j = 0; j < 3; j++){
                 if((_board3[y][j] == player.playerOneSymbol) && (_board3[y][j+1] == player.playerOneSymbol) && (_board3[y][j+2] == player.playerOneSymbol)){
                     std::cout << player.playerOneName << " wins!!" << std::endl;
-                    return;
+                    return; //todo switch gameOver variable and end the game
                 }
             }
         }
-    } else if(_boardSize == 5){
+    } else if(_boardSize == rows5){
         //todo check for win condition for 5x5
-        return;
+
+        return; //todo switch gameOver variable and end the game
     } else {
         //todo  not sure here
         return;

@@ -18,8 +18,8 @@ int main(){
     game.init(player);
     game.printBoard();
     while (!gameOver){
-        game.update(gameOver, _board3, _board5, player);
-        game.checkWin(_board3, _board5, player);
+        game.update(gameOver, game._board3, game._board5, player);
+        game.checkWin(game._board3, game._board5, player);
     }
 
 

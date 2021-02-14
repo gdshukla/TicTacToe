@@ -116,9 +116,9 @@ public:
             break;
     }
 
-    if (BoardSize == 2){
+    if (BoardSize == rows3){
         //todo update board 3x3
-        for (int j = 0; j < rows3; j++){
+        for (int j = 0; j < cols3; j++){
             for (int i = 0; i < rows3; i++){
                 if (i == imoveLetter && j == imoveNumber){
                     _board3[j][i] = playerOneSymbol;
@@ -126,9 +126,9 @@ public:
             }
         }
 
-    } else {
+    } else if (BoardSize == rows5){
         // todo update board 5x5
-        for (int j = 0; j < rows5; j++){
+        for (int j = 0; j < cols5; j++){
             for (int i = 0; i < rows5; i++){
                 if (i == imoveLetter && j == imoveNumber){
                     _board5[j][i] = playerOneSymbol;
@@ -194,7 +194,7 @@ public:
             break;
     }
 
-    if (BoardSize == 3){
+    if (BoardSize == rows3){
         for (int j = 0; j < cols3; j++){
             for (int i = 0; i < rows3; i++){
                 if (i == imoveLetter && j == imoveNumber){
@@ -203,7 +203,7 @@ public:
             }
         }
 
-    } else {
+    } else if (BoardSize == rows5){
         
         for (int j = 0; j < cols5; j++){
             for (int i = 0; i < rows5; i++){

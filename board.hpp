@@ -2,9 +2,7 @@
 #include <iostream>
 
 
- static const int rows3 = 2, cols3 = 2, rows5 = 4, cols5 = 4;
- char _board3[rows3][cols3];
- char _board5[rows5][cols5];
+    static const int rows3 = 3, cols3 = 3, rows5 = 5, cols5 = 5;
 
 void inline getBoardSize(char &check2, int &_boardSize){
     std::cout << "What size game?  (Enter a 3 for a 3 x 3 game, or 5 for a 5 x 5 game)" << std::endl;
