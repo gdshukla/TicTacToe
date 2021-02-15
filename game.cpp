@@ -62,8 +62,8 @@ void Game::update(bool &gameOver, char (&_board3)[rows3][cols3],char (&_board5)[
 void Game::checkWin(char _board3[rows3][cols3], char _board5[rows5][cols5], Player &player, bool &endgame){
     if(_boardSize == rows3){
         //todo check for win condition for 3x3
-        for(int y = 0; y < 3; y++){
-            for(int j = 0; j < 3; j++){
+        for(int y = 0; y < cols3; y++){
+            for(int j = 0; j < cols3; j++){
                 if((_board3[y][j] == player.playerOneSymbol) && (_board3[y][j+1] == player.playerOneSymbol) && (_board3[y][j+2] == player.playerOneSymbol)){
                     std::cout << player.playerOneName << " wins!!" << std::endl;
                     endgame = true;
