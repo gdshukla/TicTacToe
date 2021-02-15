@@ -19,7 +19,7 @@ int main(){
     game.printBoard();
     while (!gameOver){
         game.update(gameOver, game._board3, game._board5, player);
-        game.checkWin(game._board3, game._board5, player);
+        game.checkWin(game._board3, game._board5, player, gameOver);
     }
 
 

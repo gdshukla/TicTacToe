@@ -59,20 +59,30 @@ void Game::update(bool &gameOver, char (&_board3)[rows3][cols3],char (&_board5)[
 
 }
 
-void Game::checkWin(char _board3[rows3][cols3], char _board5[rows5][cols5], Player &player){
+void Game::checkWin(char _board3[rows3][cols3], char _board5[rows5][cols5], Player &player, bool &endgame){
     if(_boardSize == rows3){
         //todo check for win condition for 3x3
         for(int y = 0; y < 3; y++){
             for(int j = 0; j < 3; j++){
                 if((_board3[y][j] == player.playerOneSymbol) && (_board3[y][j+1] == player.playerOneSymbol) && (_board3[y][j+2] == player.playerOneSymbol)){
                     std::cout << player.playerOneName << " wins!!" << std::endl;
+                    endgame = true;
                     return; //todo switch gameOver variable and end the game
                 }
             }
         }
     } else if(_boardSize == rows5){
         //todo check for win condition for 5x5
-
+        for (int col = 0; col < cols5; col++){
+            for (int row = 0; row < rows5; row++){
+                if((_board5[col][row] == player.playerOneSymbol) && (_board5[col][row+1] == player.playerOneSymbol) && (_board5[col][row+2] == player.playerOneSymbol)
+                && (_board5[col][row+3] == player.playerOneSymbol) && (_board5[col][row+4] == player.playerOneSymbol)){
+                    std::cout << player.playerOneName << " wins!!" << std::endl;
+                    endgame = true;
+                    return;
+                }
+            }
+        }
         return; //todo switch gameOver variable and end the game
     } else {
         //todo  not sure here
