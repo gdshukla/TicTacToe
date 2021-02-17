@@ -60,21 +60,20 @@ void Game::update(bool &gameOver, char (&_board3)[rows3][cols3],char (&_board5)[
 }
 
 void Game::checkWin(char _board3[rows3][cols3], char _board5[rows5][cols5], Player &player, bool &endgame){
+    // int vertFlag = 0;
     if(_boardSize == rows3){
-        //todo check for win condition for 3x3
-        for(int y = 0; y < cols3; y++){
-            for(int j = 0; j < cols3; j++){
-                if((_board3[y][j] == player.playerOneSymbol) && (_board3[y][j+1] == player.playerOneSymbol) && (_board3[y][j+2] == player.playerOneSymbol)){
+        for(int col = 0; col < cols3; col++){
+            for(int row = 0; row < cols3; row++){ //todo check win for vertical and diagonal
+                if((_board3[rows3][cols3] == player.playerOneSymbol) && (_board3[rows3][cols3+1] == player.playerOneSymbol) && (_board3[rows3][cols3+2] == player.playerOneSymbol)){
                     std::cout << player.playerOneName << " wins!!" << std::endl;
                     endgame = true;
-                    return; //todo switch gameOver variable and end the game
+                    return; 
                 }
             }
         }
     } else if(_boardSize == rows5){
-        //todo check for win condition for 5x5
         for (int col = 0; col < cols5; col++){
-            for (int row = 0; row < rows5; row++){
+            for (int row = 0; row < rows5; row++){ //todo check win for vertical and diagonal
                 if((_board5[col][row] == player.playerOneSymbol) && (_board5[col][row+1] == player.playerOneSymbol) && (_board5[col][row+2] == player.playerOneSymbol)
                 && (_board5[col][row+3] == player.playerOneSymbol) && (_board5[col][row+4] == player.playerOneSymbol)){
                     std::cout << player.playerOneName << " wins!!" << std::endl;
@@ -83,9 +82,6 @@ void Game::checkWin(char _board3[rows3][cols3], char _board5[rows5][cols5], Play
                 }
             }
         }
-        return; //todo switch gameOver variable and end the game
-    } else {
-        //todo  not sure here
+    } 
         return;
-    }
 }
