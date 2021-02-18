@@ -5,7 +5,7 @@
 
 
 
-void getBoardSize(char &check2, int &_boardSize, int Rows3, int Rows5){
+void getBoardSize(char &check2, int &_boardSize, const int Rows3, const int Rows5){
     std::cout << "What size game?  (Enter a 3 for a 3 x 3 game, or 5 for a 5 x 5 game)" << std::endl;
     int input;
     std::cin >> input;
@@ -39,30 +39,30 @@ void getBoardSize(char &check2, int &_boardSize, int Rows3, int Rows5){
 
 }
 
-void  boardInit(int &_boardSize, char _board3[][cols3], char _board5[][cols5], char &check){
+void boardInit(int &_boardSize, char* _board3[], char* _board5[], int Cols3, int Rows3, int Cols5, int Rows5, char &check){
 
 
-        if (_boardSize == rows3){
+        if (_boardSize == Rows3){
 
-            for (int y = 0; y < rows3; y++){
-                for (int x = 0; x < rows3; x++) {
+            for (int y = 0; y < Rows3; y++){
+                for (int x = 0; x < Rows3; x++) {
                     if ((x % 2) == 0){
-                        _board3[y][x] = '.';
+                        _board3[Cols3][Rows3] = '.';
                     } else {
-                        _board3[y][x] = '*';
+                        _board3[Cols3][Rows3] = '*';
                     }
                 }
             }
             check = 'F';
             return;
         }
-        else if (_boardSize == rows5){
-            for (int y = 0; y <= rows5; y++){
-                for (int x = 0; x <= rows5; x++) {
+        else if (_boardSize == Rows5){
+            for (int y = 0; y <= Rows5; y++){
+                for (int x = 0; x <= Rows5; x++) {
                     if ((x % 2) == 0){
-                        _board5[y][x] = '.';
+                        _board5[Cols5][Rows5] = '.';
                     } else {
-                        _board5[y][x] = '*';
+                        _board5[Cols5][Rows5] = '*';
                     }
                 }
             }
