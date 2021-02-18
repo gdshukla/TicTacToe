@@ -6,7 +6,7 @@
 
 
 Game::Game(){
-    
+    +
 }
 void Game::init(Player& player){
     std::cout << "** Tic Tac Toe **" << std::endl;
@@ -14,7 +14,7 @@ void Game::init(Player& player){
 
     char check2 = 'T';  //switch check to 'F' inside boardInit() to exit while loop
     while (check2 == 'T'){
-    getBoardSize(check2, _boardSize);
+    getBoardSize(check2, _boardSize, rows3, rows5);
     }
 
     char check = 'T';  //switch check to 'F' inside boardInit() to exit while loop
@@ -48,7 +48,7 @@ void Game::printBoard(){
     }
         
 }
-void Game::update(bool &gameOver, char (&_board3)[rows3][cols3],char (&_board5)[rows5][cols5], Player &player){
+void Game::update(bool &gameOver, char** _board3,char** _board5, Player &player){
     player.updatePlayerOne(_boardSize, _numberOfPlayers, _board3, _board5);
     printBoard();
     if (_numberOfPlayers == 2){
@@ -59,7 +59,7 @@ void Game::update(bool &gameOver, char (&_board3)[rows3][cols3],char (&_board5)[
 
 }
 
-void Game::checkWin(char _board3[rows3][cols3], char _board5[rows5][cols5], Player &player, bool &endgame){
+void Game::checkWin(char** _board3, char** _board5, Player &player, bool &endgame){
     // int vertFlag = 0;
     if(_boardSize == rows3){
         for(int col = 0; col < cols3; col++){

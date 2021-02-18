@@ -1,10 +1,11 @@
 #pragma once
 #include <iostream>
+#include "game.hpp"
 
 
-    static const int rows3 = 3, cols3 = 3, rows5 = 5, cols5 = 5;
 
-void inline getBoardSize(char &check2, int &_boardSize){
+
+void getBoardSize(char &check2, int &_boardSize, int Rows3, int Rows5){
     std::cout << "What size game?  (Enter a 3 for a 3 x 3 game, or 5 for a 5 x 5 game)" << std::endl;
     int input;
     std::cin >> input;
@@ -15,7 +16,7 @@ void inline getBoardSize(char &check2, int &_boardSize){
         check2 = 'F';
         std::cin.clear();
         std::cin.ignore(10000,'\n');
-        _boardSize = rows3; // rows3 is just so it's not hardcoded to 3, Y because board x,y might be different, not sure yet
+        _boardSize = Rows3; // rows3 is just so it's not hardcoded to 3, Y because board x,y might be different, not sure yet
         
         break;
             // 2, 5 are for board size 5 x 5, people might press 2 or 5
@@ -24,7 +25,7 @@ void inline getBoardSize(char &check2, int &_boardSize){
         check2 = 'F';
         std::cin.clear();
         std::cin.ignore(10000,'\n');
-        _boardSize = rows5; // rows5 is just so it's not hardcoded to 5, Y because board x,y might be different, not sure yet
+        _boardSize = Rows5; // rows5 is just so it's not hardcoded to 5, Y because board x,y might be different, not sure yet
         
         break;
         default:
@@ -38,7 +39,7 @@ void inline getBoardSize(char &check2, int &_boardSize){
 
 }
 
-void inline boardInit(int &_boardSize, char _board3[][cols3], char _board5[][cols5], char &check){
+void  boardInit(int &_boardSize, char _board3[][cols3], char _board5[][cols5], char &check){
 
 
         if (_boardSize == rows3){
