@@ -4,7 +4,6 @@
 #include <iostream>
 //#include <string>
 
-
 Game::Game(){
 
 }
@@ -19,7 +18,7 @@ void Game::init(Player& player){
 
     char check = 'T';  //switch check to 'F' inside boardInit() to exit while loop
     while (check == 'T'){
-    boardInit(_boardSize, _board3, _board5, cols3, rows3, cols5, rows5, check);
+    boardInit(_boardSize, &_board3, &_board5, check);
     }
 
     player.getPlayerOneName();

@@ -2,7 +2,7 @@
 #include "board.hpp"
 #include "player.hpp"
 #include <string>
-
+#include <array>
 
 
 class Game { 
@@ -19,8 +19,8 @@ public:
     int _numberOfPlayers;
     int _boardSize;
 
-    char* _board3[];
-    char* _board5[];
+    std::array<std::array<char, 3>, 3 > _board3 = {" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "};
+    std::array<std::array<char, 5>, 5 > _board5 = {" ", " ", " ", " ", " "}, {" ", " ", " ", " ", " "}, {" ", " ", " ", " ", " "}, {" ", " ", " ", " ", " "}, {" ", " ", " ", " ", " "};
 
 
 

@@ -1,9 +1,10 @@
 #pragma once
 #include <iostream>
-#include "game.hpp"
+//#include "game.hpp"
 
 
 
+int Cols3 =3; int Rows3 = 3; int Cols5 = 5; int Rows5 = 5;
 
 void getBoardSize(char &check2, int &_boardSize, const int Rows3, const int Rows5){
     std::cout << "What size game?  (Enter a 3 for a 3 x 3 game, or 5 for a 5 x 5 game)" << std::endl;
@@ -39,17 +40,17 @@ void getBoardSize(char &check2, int &_boardSize, const int Rows3, const int Rows
 
 }
 
-void boardInit(int &_boardSize, char* _board3[], char* _board5[], int Cols3, int Rows3, int Cols5, int Rows5, char &check){
+void boardInit(int &_boardSize, std::array<std::array<char, 3>, 3> &_board3(int Cols3, std::array<char, 3> (int Rows3)), std::array<std::array<char, 5>, 5> &_board5(int Cols5, std::array<char, 5>(int Rows5)), char &check){
 
 
         if (_boardSize == Rows3){
 
-            for (int y = 0; y < Rows3; y++){
+            for (int y = 0; y < Cols3; y++){
                 for (int x = 0; x < Rows3; x++) {
                     if ((x % 2) == 0){
-                        _board3[Cols3][Rows3] = '.';
+                        _board3.begin() = '.';
                     } else {
-                        _board3[Cols3][Rows3] = '*';
+                        game._board3[Cols3][Rows3] = '*';
                     }
                 }
             }
@@ -57,7 +58,7 @@ void boardInit(int &_boardSize, char* _board3[], char* _board5[], int Cols3, int
             return;
         }
         else if (_boardSize == Rows5){
-            for (int y = 0; y <= Rows5; y++){
+            for (int y = 0; y <= Cols5; y++){
                 for (int x = 0; x <= Rows5; x++) {
                     if ((x % 2) == 0){
                         _board5[Cols5][Rows5] = '.';
