@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
-#include <typeinfo>
+#include <array>
+#include "game.hpp"
+
+//#include <typeinfo>
 
 
 class Player {
@@ -62,7 +65,7 @@ public:
         std::cin.ignore(1000, '\n');
         return playerTwoSymbol;
     }
-    void updatePlayerOne(int BoardSize, int NumberOfPlayers, char* _board3[], char* _board5[], int Cols3, int Rows3, int Cols5, int Rows5){
+    void updatePlayerOne(int BoardSize, int NumberOfPlayers, std::array< std::array<char, Rows3>, Cols3> _board3, std::array< std::array<char, Rows5>, Cols5> _board5, int cols3, int rows3, int cols5, int rows5){
     char moveLetter; //todo pass player as arg for function
     char moveNumber;
     int imoveLetter, imoveNumber;
@@ -122,7 +125,7 @@ public:
         for (int j = 0; j < Cols3; j++){
             for (int i = 0; i < Rows3; i++){
                 if (i == imoveLetter && j == imoveNumber){
-                    _board3[Cols3][Rows3] = playerOneSymbol;
+                    _board3[j][i] = playerOneSymbol;
                 }
             }
         }
@@ -140,7 +143,7 @@ public:
     
     }
 
-    void updatePlayerTwo(int BoardSize, int NumberOfPlayers, char* _board3[], char* _board5[], int Cols3, int Rows3, int Cols5, int Rows5){
+    void updatePlayerTwo(int BoardSize, int NumberOfPlayers, std::array< std::array<char, Rows3>, Cols3> _board3, std::array< std::array<char, Rows5>, Cols5> _board5, int Cols3, int Rows3, int Cols5, int Rows5){
     char moveLetter;
     char moveNumber;
     int imoveLetter, imoveNumber;

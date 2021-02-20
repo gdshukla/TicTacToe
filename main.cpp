@@ -11,15 +11,17 @@
 std::string boardSize; */
 bool gameOver = false;
 
+
+
 int main(){
     //how many playes, multiplayer?, 
     Game game;
     Player player;
-    game.init(player);
+    game.init(player, game._board3, game._board5);
     game.printBoard();
     while (!gameOver){
-        game.update(gameOver, _board3, _board5, player);
-        game.checkWin(_board3, _board5, player, gameOver);
+        game.update(gameOver, game._board3, game._board5, player);
+        game.checkWin(game._board3, game._board5, player, gameOver);
     }
 
 
