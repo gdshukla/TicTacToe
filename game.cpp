@@ -1,20 +1,23 @@
 #include "game.hpp"
-#include "board.hpp"
 //#include "player.hpp"
+#include "board.hpp"
 
 #include <iostream>
+#include <array>
 //#include <string>
 
 
-Game::Game(){
+Game::Game()
+{
 
 }
-Game::~Game(){
+Game::~Game()
+{
 
 }
-const unsigned int Cols3 = 3;  const unsigned int Rows3 = 3;  const unsigned int Cols5 = 5;  const unsigned int Rows5 = 5;
 
-void Game::init(Player& player, std::array< std::array<char, Rows3>, Cols3> _board3, std::array< std::array<char, Rows5>, Cols5> _board5){
+
+void Game::init(Player& player,  std::array<  std::array<char, Rows3>, Cols3> _board3,  std::array<  std::array<char, Rows5>, Cols5> _board5){
     std::cout << "** Tic Tac Toe **" << std::endl;
     _numberOfPlayers = player.getPlayerNumber();
 
@@ -54,11 +57,11 @@ void Game::printBoard(){
     }
         
 }
-void Game::update(bool &gameOver, std::array< std::array<char, Rows3>, Cols3> _board3, std::array< std::array<char, Rows5>, Cols5> _board5, Player &player){
-    player.updatePlayerOne(_boardSize, _numberOfPlayers, _board3, _board5, Cols3, Rows3, Cols5, Rows5);
+void Game::update(bool &gameOver,  std::array<  std::array<char, Rows3>, Cols3> _board3,  std::array<  std::array<char, Rows5>, Cols5> _board5, Player &player){
+    player.updatePlayerOne(_boardSize, _numberOfPlayers,  _board3, _board5);
     printBoard();
     if (_numberOfPlayers == 2){
-        player.updatePlayerTwo(_boardSize, _numberOfPlayers, _board3, _board5, Cols3, Rows3, Cols5, Rows5);
+        player.updatePlayerTwo(_boardSize, _numberOfPlayers, _board3, _board5);
         printBoard();
     }
     return;
