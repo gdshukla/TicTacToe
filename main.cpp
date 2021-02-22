@@ -1,7 +1,8 @@
 
 #include "game.hpp"
 #include <iostream>
-#include <string>
+//#include <string>
+
 
 
  
@@ -10,16 +11,15 @@
 /* int numberOfPlayers;
 std::string boardSize; */
 bool gameOver = false;
-void boardInit(int &_boardSize,  std::array < std::array <char, Rows3>, Cols3> _board3,  std::array < std::array<char, Rows5>, Cols5> _board5, char &check);
-void getBoardSize(char &check2, int &_boardSize,  const unsigned int &Rows3,  const unsigned int &Rows5);
+
 int main(){
     //how many playes, multiplayer?, 
-    Game game;
-    Player player;
-    game.init(player, game._board3, game._board5);
+/*     Game game;
+    Player player; */
+    game.init(game._board3, game._board5);
     game.printBoard();
     while (!gameOver){
-        game.update(gameOver, game._board3, game._board5, player);
+        game.update(gameOver, game._board3, game._board5, player, game);
         game.checkWin(game._board3, game._board5, player, gameOver);
     }
 
