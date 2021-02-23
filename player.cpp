@@ -61,7 +61,7 @@
         std::cin.ignore(1000, '\n');
         return playerTwoSymbol;
     }
-    void Player::updatePlayerOne(int BoardSize, int NumberOfPlayers, char &_board3,  char &_board5){
+    void Player::updatePlayerOne(int BoardSize, int NumberOfPlayers, std::array< std::array<char, 3>, 3> &_board3,  std::array< std::array<char, 5>, 5> &_board5){
         char moveLetter; //todo pass player as arg for function
         char moveNumber;
         int imoveLetter, imoveNumber;
@@ -121,7 +121,7 @@
             for (int j = 0; j < BoardSize; j++){
                 for (int i = 0; i < BoardSize; i++){
                     if (i == imoveLetter && j == imoveNumber){
-                        board._board3[j][i] = player.playerOneSymbol;
+                        _board3[j][i] = playerOneSymbol;
                     }
                 }
             }
@@ -131,7 +131,7 @@
             for (int j = 0; j < BoardSize; j++){
                 for (int i = 0; i < BoardSize; i++){
                     if (i == imoveLetter && j == imoveNumber){
-                        board._board5[j][i] = player.playerOneSymbol;
+                        _board5[j][i] = playerOneSymbol;
                     }
                 }
             }
@@ -139,11 +139,11 @@
         
     }
 
-    void Player::updatePlayerTwo(int BoardSize, int NumberOfPlayers, char &_board3, char &_board5){
+    void Player::updatePlayerTwo(int BoardSize, int NumberOfPlayers, std::array< std::array<char, 3>, 3> &_board3,  std::array< std::array<char, 5>, 5> &_board5){
         char moveLetter;
         char moveNumber;
         int imoveLetter, imoveNumber;
-        std::cout << "\t" << player.playerTwoName << ", place your symbol." << std::endl;
+        std::cout << "\t" << playerTwoName << ", place your symbol." << std::endl;
         std::cout << "Enter row (letter): " << " ";
         std::cin >> moveLetter;
         std::cout << "Enter column (number): " << " \n";
@@ -195,20 +195,20 @@
         }
 
         if (BoardSize == 3){
-            for (int j = 0; j < board.Cols3; j++){
-                for (int i = 0; i < board.Rows3; i++){
+            for (int j = 0; j < Cols3; j++){
+                for (int i = 0; i < Rows3; i++){
                     if (i == imoveLetter && j == imoveNumber){
-                        board._board3[j][i] = player.playerTwoSymbol;
+                        _board3[j][i] = playerTwoSymbol;
                     }
                 }
             }
 
-        } else if (BoardSize == board.Rows5){
+        } else if (BoardSize == Rows5){
             
-            for (int j = 0; j < board.Cols5; j++){
-                for (int i = 0; i < board.Rows5; i++){
+            for (int j = 0; j < Cols5; j++){
+                for (int i = 0; i < Rows5; i++){
                     if (i == imoveLetter && j == imoveNumber){
-                        board._board5[j][i] = player.playerTwoSymbol;
+                        _board5[j][i] = playerTwoSymbol;
                     }
                 }
             }

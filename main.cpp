@@ -21,10 +21,10 @@ int main(){
     Game game;
     Player player;
     Board board;
-    game.init(board._board3[board.Cols3][board.Rows3], board._board5[board.Cols5][board.Rows5]);
+    game.init(board._board3, board._board5, player, board);
     game.printBoard(board);
     while (!gameOver){
-        game.update(gameOver, board._board3[board.Cols3][board.Rows3], board._board5[board.Cols5][board.Rows5], player, game);
+        game.update(gameOver, board._board3, board._board5, player, game, board);
         game.checkWin(board._board3, board._board5, player, board, gameOver);
     }
 
