@@ -3,7 +3,7 @@
 #include <array>
 #include <string>
 #include "player.hpp"
-//#include "board.hpp"
+#include "board.hpp"
 
 
 //#include <typeinfo>
@@ -26,46 +26,46 @@
     }
     std::string Player::getPlayerOneName(){
         std::cout << "Enter Player 1 name :" << std::endl;
-        std::cin >> player.playerOneName;
+        std::cin >> playerOneName;
         std::cin.clear();
         std::cin.ignore(10000,'\n');
-        return player.playerOneName;
+        return playerOneName;
     }
     std::string Player::getPlayerTwoName(){
         std::cout << "Enter Player 2 name :" << std::endl;
-        std::cin >> player.playerTwoName;
+        std::cin >> playerTwoName;
         std::cin.clear();
         std::cin.ignore(10000,'\n');
         //std::cout << "from player.hpp, inside getPlayerOneName, If statement using if(getPlayerNumber() == 2)" << std::endl;
-        return player.playerTwoName;
+        return playerTwoName;
     }
     char Player::getPlayerOneSymbol(){
         std::cout << "Player 1: Enter what Symbol you would like to play as?" << std::endl;
-        std::cin >> player.playerOneSymbol;
+        std::cin >> playerOneSymbol;
         std::cin.clear();
         std::cin.ignore(1000, '\n');
-        std::cout << "Hit Enter to confirm play as: " << player.playerOneSymbol << std::endl;
+        std::cout << "Hit Enter to confirm play as: " << playerOneSymbol << std::endl;
         std::cin;
         std::cin.clear();
         std::cin.ignore(1000, '\n');
-        return player.playerOneSymbol;
+        return playerOneSymbol;
     }
     char Player::getPlayerTwoSymbol(){
         std::cout << "Player 2: Enter what Symbol you would like to play as?" << std::endl;
-        std::cin >> player.playerTwoSymbol;
+        std::cin >> playerTwoSymbol;
         std::cin.clear();
         std::cin.ignore(1000, '\n');
-        std::cout << "Hit Enter to confirm play as: " << player.playerTwoSymbol << std::endl;
+        std::cout << "Hit Enter to confirm play as: " << playerTwoSymbol << std::endl;
         std::cin;
         std::cin.clear();
         std::cin.ignore(1000, '\n');
-        return player.playerTwoSymbol;
+        return playerTwoSymbol;
     }
     void Player::updatePlayerOne(int BoardSize, int NumberOfPlayers, char &_board3,  char &_board5){
         char moveLetter; //todo pass player as arg for function
         char moveNumber;
         int imoveLetter, imoveNumber;
-        std::cout << "\t" << player.playerOneName << ", place your symbol." << std::endl;
+        std::cout << "\t" << playerOneName << ", place your symbol." << std::endl;
         std::cout << "Enter row (letter): " << " ";
         std::cin >> moveLetter;
         std::cout << "Enter column (number): " << " \n";

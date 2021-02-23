@@ -2,7 +2,8 @@
 #include <string>
 #include <array>
 
-class Player {
+
+class Player : public Board{
 public:
     int getPlayerNumber();
     std::string getPlayerOneName();
@@ -17,4 +18,4 @@ public:
     std::string playerTwoName;
     char playerOneSymbol;
     char playerTwoSymbol;
-} player;
+};

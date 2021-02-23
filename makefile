@@ -8,13 +8,13 @@
 
 main:  main.o game.o player.o board.o
 	g++ main.o game.o player.o board.o -o main
-main.o: main.cpp game.hpp
+main.o: main.cpp
 	g++ -c -g main.cpp 
-game.o: game.cpp player.cpp game.hpp
-	g++ -c -g game.cpp player.cpp
-board.o: board.cpp
+game.o: game.cpp game.hpp
+	g++ -c -g game.cpp 
+board.o: board.cpp board.hpp
 	g++ -c -g board.cpp
-player.o: player.cpp
+player.o: player.cpp player.hpp board.hpp
 	c++ -c -g player.cpp 
 clean:
 	rm -f *.o *.out

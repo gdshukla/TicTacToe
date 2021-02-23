@@ -46,30 +46,30 @@
 
 }
 
-    void Board::boardInit(int &_boardSize,  char &_board3,  char &_board5, char &check){
+    void Board::boardInit(int &_boardSize,  std::array< std::array<char, 3>, 3> _board3,  std::array< std::array<char, 5>, 5> _board5, char &check){
 
 
-        if (_boardSize == board.Rows3){
+        if (_boardSize == Rows3){
 
-            for (int y = 0; y < board.Cols3; y++){
-                for (int x = 0; x < board.Rows3; x++) {
+            for (int y = 0; y < Cols3; y++){
+                for (int x = 0; x < Rows3; x++) {
                     if ((x % 2) == 0){
-                        board._board3[y][x] = '.';
+                        _board3[y][x] = '.';
                     } else {
-                        board._board3[y][x] = '*';
+                        _board3[y][x] = '*';
                     }
                 }
             }
             check = 'F';
             return;
         }
-        else if (_boardSize == board.Rows5){
-            for (int y = 0; y <= board.Cols5; y++){
-                for (int x = 0; x <= board.Rows5; x++) {
+        else if (_boardSize == Rows5){
+            for (int y = 0; y <= Cols5; y++){
+                for (int x = 0; x <= Rows5; x++) {
                     if ((x % 2) == 0){
-                        board._board5[y][x] = '.';
+                        _board5[y][x] = '.';
                     } else {
-                        board._board5[y][x] = '*';
+                        _board5[y][x] = '*';
                     }
                 }
             }

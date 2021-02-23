@@ -1,6 +1,6 @@
 #include "game.hpp"
-//#include "board.hpp"
-//#include "player.hpp"
+#include "board.hpp"
+#include "player.hpp"
 #include <iostream>
 #include <array>
 //#include <string>
@@ -16,7 +16,7 @@ Game::~Game()
 }
 
 
-void Game::init(char &_board3, char &_board5){
+void Game::init(char &_board3, char &_board5, Player &player, Board &board){
     std::cout << "** Tic Tac Toe **" << std::endl;
     _numberOfPlayers = player.getPlayerNumber();
 
@@ -27,7 +27,7 @@ void Game::init(char &_board3, char &_board5){
 
     char check = 'T';  //switch check to 'F' inside boardInit() to exit while loop
     while (check == 'T'){
-    board.boardInit(board._boardSize, board._board3[board.Cols3][board.Rows3], board._board5[board.Cols5][board.Rows5], check);
+    board.boardInit(board._boardSize, board._board3, board._board5, check);
     }
 
     player.getPlayerOneName();
@@ -38,7 +38,7 @@ void Game::init(char &_board3, char &_board5){
     }
 
 }
-void Game::printBoard(){
+void Game::printBoard(Board board){
     if (board._boardSize == board.Rows3){
         for (int y = 0; y < board.Rows3; y++){
             for (int x = 0; x < board.Rows3; x++){
@@ -58,18 +58,18 @@ void Game::printBoard(){
 }
 void Game::update(bool &gameOver,  char &_board3,  char &_board5, Player &player, Game &game){
     player.updatePlayerOne(board._boardSize, _numberOfPlayers, board._board3[board.Cols3][board.Rows3], board._board5[board.Cols5][board.Rows5]);
-    printBoard();
+    printBoard(board._boardSize);
     if (_numberOfPlayers == 2){
         player.updatePlayerTwo(board._boardSize, _numberOfPlayers, board._board3[board.Cols3][board.Rows3], board._board5[board.Cols5][board.Rows5]);
-        printBoard();
+        printBoard(board);
     }
     return;
 
 }
 
-void Game::checkWin(char &_board3,  char &_board5, Player &player, bool &endgame){
+void Game::checkWin(std::array< std::array<char, 3>, 3> _board3,  std::array< std::array<char, 5>, 5> _board5, Player player, Board board, bool &endgame){
     // int vertFlag = 0;
-    if(board._boardSize == board.Rows3){
+    if(board._boardSize == Rows3){  //todo Stopped here
         for(int col = 0; col < board.Cols3; col++){
             for(int row = 0; row < board.Rows3; row++){ //todo check win for vertical and diagonal
                 if((board._board3[col][row] == player.playerOneSymbol) && (board._board3[col][row+1] == player.playerOneSymbol) && (board._board3[col][row+2] == player.playerOneSymbol)){

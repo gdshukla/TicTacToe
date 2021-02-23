@@ -7,7 +7,7 @@ public:
     Board();
     ~Board();
     void getBoardSize(char &check2, int &_boardSize,  const unsigned int Rows3,  const unsigned int Rows5);
-    void boardInit(int &_boardSize,  char &_board3,  char &_board5, char &check);
+    void boardInit(int &_boardSize,  std::array< std::array<char, 3>, 3> _board3,  std::array< std::array<char, 5>, 5> _board5, char &check);
 
     int _boardSize;
     static const int Rows3 = 3;
@@ -16,4 +16,4 @@ public:
     static const int Cols5 = 5;
     std::array< std::array<char, Rows3 >, Cols3>  _board3;
     std::array< std::array<char, Rows5 >, Cols5>  _board5;
-} board;
+};
