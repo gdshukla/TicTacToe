@@ -1,6 +1,10 @@
 
 #include "game.hpp"
+#include "board.hpp"
+#include "player.hpp"
+//#include "board.hpp"
 #include <iostream>
+#include <array>
 //#include <string>
 
 
@@ -16,11 +20,11 @@ int main(){
     //how many playes, multiplayer?, 
 /*     Game game;
     Player player; */
-    game.init(game._board3, game._board5);
+    game.init(board._board3[board.Cols3][board.Rows3], board._board5[board.Cols5][board.Rows5]);
     game.printBoard();
     while (!gameOver){
-        game.update(gameOver, game._board3, game._board5, player, game);
-        game.checkWin(game._board3, game._board5, player, gameOver);
+        game.update(gameOver, board._board3[board.Cols3][board.Rows3], board._board5[board.Cols5][board.Rows5], player, game);
+        game.checkWin(board._board3[board.Cols3][board.Rows3], board._board5[board.Cols5][board.Rows5], player, gameOver);
     }
 
 
