@@ -39,7 +39,7 @@ void Game::init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array
 
 }
 void Game::printBoard(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, int &_boardSize){
-    if (_boardSize == Rows3){
+    if (_boardSize == Rows3){  //todo _boardSize not being initialized here
         for (int y = 0; y < Rows3; y++){
             for (int x = 0; x < Rows3; x++){
                 std::cout << _board3[y][x];
@@ -58,8 +58,8 @@ void Game::printBoard(std::array< std::array<char, Rows3>, Cols3> _board3,  std:
         
 }
 void Game::update(bool &gameOver,  std::array< std::array<char, Rows3>, Cols3> &_board3,  std::array< std::array<char, Rows5>, Cols5> &_board5, Player &player, Game &game, Board board){
-    player.updatePlayerOne(_boardSize, _board3, _board5);
-    printBoard(_board3, _board5, _boardSize);
+    player.updatePlayerOne(board._boardSize, board._board3, board._board5);
+    printBoard(_board3, _board5, board._boardSize); //todo fuck all of this
     if (_numberOfPlayers == 2){
         player.updatePlayerTwo(board._boardSize, _board3, _board5);
         printBoard(_board3, _board5, _boardSize);
@@ -70,7 +70,7 @@ void Game::update(bool &gameOver,  std::array< std::array<char, Rows3>, Cols3> &
 
 void Game::checkWin(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player player, Board board, bool &endgame){
     // int vertFlag = 0;
-    if(board._boardSize == Rows3){  //todo Stopped here
+    if(board._boardSize == Rows3){ 
         for(int col = 0; col < board.Cols3; col++){
             for(int row = 0; row < board.Rows3; row++){ //todo check win for vertical and diagonal
                 if((board._board3[col][row] == player.playerOneSymbol) && (board._board3[col][row+1] == player.playerOneSymbol) && (board._board3[col][row+2] == player.playerOneSymbol)){
