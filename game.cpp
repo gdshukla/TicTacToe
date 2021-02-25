@@ -16,7 +16,7 @@ Game::~Game()
 }
 
 
-void Game::init(std::array< std::array<char, 3>, 3> _board3,  std::array< std::array<char, 5>, 5> _board5, Player &player, Board &board){
+void Game::init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player &player, Board &board){
     std::cout << "** Tic Tac Toe **" << std::endl;
     _numberOfPlayers = player.getPlayerNumber();
 
@@ -57,7 +57,7 @@ void Game::printBoard(std::array< std::array<char, Rows3>, Cols3> _board3,  std:
     }
         
 }
-void Game::update(bool &gameOver,  std::array< std::array<char, 3>, 3> &_board3,  std::array< std::array<char, 5>, 5> &_board5, Player &player, Game &game, Board board){
+void Game::update(bool &gameOver,  std::array< std::array<char, Rows3>, Cols3> &_board3,  std::array< std::array<char, Rows5>, Cols5> &_board5, Player &player, Game &game, Board board){
     player.updatePlayerOne(_boardSize, _board3, _board5);
     printBoard(_board3, _board5, _boardSize);
     if (_numberOfPlayers == 2){
@@ -68,7 +68,7 @@ void Game::update(bool &gameOver,  std::array< std::array<char, 3>, 3> &_board3,
 
 }
 
-void Game::checkWin(std::array< std::array<char, 3>, 3> _board3,  std::array< std::array<char, 5>, 5> _board5, Player player, Board board, bool &endgame){
+void Game::checkWin(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player player, Board board, bool &endgame){
     // int vertFlag = 0;
     if(board._boardSize == Rows3){  //todo Stopped here
         for(int col = 0; col < board.Cols3; col++){
