@@ -12,7 +12,7 @@
     }
 
 
-    void Board::getBoardSize(char &check2, int &_boardSize,  const unsigned int Rows3,  const unsigned int Rows5){
+    void Board::getBoardSize(char &check2, int &_boardSize,  const unsigned int &Rows3,  const unsigned int &Rows5){
     std::cout << "What size game?  (Enter a 3 for a 3 x 3 game, or 5 for a 5 x 5 game)" << std::endl;
     int input;
     std::cin >> input;
@@ -46,7 +46,7 @@
 
 }
 
-    void Board::boardInit(int &_boardSize,  std::array< std::array<char, 3>, 3> _board3,  std::array< std::array<char, 5>, 5> _board5, char &check){
+    void Board::boardInit(int &_boardSize,  std::array< std::array<char, Rows3>, Cols3> &_board3,  std::array< std::array<char, Rows5>, Cols5> &_board5, char &check){
 
 
         if (_boardSize == Rows3){

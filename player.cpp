@@ -61,7 +61,7 @@
         std::cin.ignore(1000, '\n');
         return playerTwoSymbol;
     }
-    void Player::updatePlayerOne(int BoardSize, int NumberOfPlayers, std::array< std::array<char, 3>, 3> &_board3,  std::array< std::array<char, 5>, 5> &_board5){
+    void Player::updatePlayerOne(int &_boardSize, std::array< std::array<char, Rows3>, Cols3> &_board3,  std::array< std::array<char, Rows5>, Cols5> &_board5){
         char moveLetter; //todo pass player as arg for function
         char moveNumber;
         int imoveLetter, imoveNumber;
@@ -116,20 +116,20 @@
                 break;
         }
 
-        if (BoardSize == 3){
+        if (_boardSize == 3){
             //todo update board 3x3
-            for (int j = 0; j < BoardSize; j++){
-                for (int i = 0; i < BoardSize; i++){
+            for (int j = 0; j < _boardSize; j++){
+                for (int i = 0; i < _boardSize; i++){
                     if (i == imoveLetter && j == imoveNumber){
                         _board3[j][i] = playerOneSymbol;
                     }
                 }
             }
 
-        } else if (BoardSize == 5){
+        } else if (_boardSize == 5){
             // todo update board 5x5
-            for (int j = 0; j < BoardSize; j++){
-                for (int i = 0; i < BoardSize; i++){
+            for (int j = 0; j < _boardSize; j++){
+                for (int i = 0; i < _boardSize; i++){
                     if (i == imoveLetter && j == imoveNumber){
                         _board5[j][i] = playerOneSymbol;
                     }
@@ -139,7 +139,7 @@
         
     }
 
-    void Player::updatePlayerTwo(int BoardSize, int NumberOfPlayers, std::array< std::array<char, 3>, 3> &_board3,  std::array< std::array<char, 5>, 5> &_board5){
+    void Player::updatePlayerTwo(int &_boardSize, std::array< std::array<char, Rows3>, Cols3> &_board3,  std::array< std::array<char, Rows5>, Cols5> &_board5){
         char moveLetter;
         char moveNumber;
         int imoveLetter, imoveNumber;
@@ -194,7 +194,7 @@
                 break;
         }
 
-        if (BoardSize == 3){
+        if (_boardSize == 3){
             for (int j = 0; j < Cols3; j++){
                 for (int i = 0; i < Rows3; i++){
                     if (i == imoveLetter && j == imoveNumber){
@@ -203,7 +203,7 @@
                 }
             }
 
-        } else if (BoardSize == Rows5){
+        } else if (_boardSize == Rows5){
             
             for (int j = 0; j < Cols5; j++){
                 for (int i = 0; i < Rows5; i++){

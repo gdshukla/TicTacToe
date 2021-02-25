@@ -38,18 +38,19 @@ void Game::init(std::array< std::array<char, 3>, 3> _board3,  std::array< std::a
     }
 
 }
-void Game::printBoard(Board board){
-    if (board._boardSize == board.Rows3){
-        for (int y = 0; y < board.Rows3; y++){
-            for (int x = 0; x < board.Rows3; x++){
-                std::cout << board._board3[y][x];
+void Game::printBoard(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, int &_boardSize){
+    if (_boardSize == Rows3){
+        for (int y = 0; y < Rows3; y++){
+            for (int x = 0; x < Rows3; x++){
+                std::cout << _board3[y][x];
             }
             std::cout << std::endl;
         }
-    } else if(board._boardSize == board.Rows5){
-        for (int y = 0; y < board.Rows5; y++){
-            for (int x = 0; x < board.Rows5; x++){
-                std::cout << board._board3[y][x];
+
+    } else if(_boardSize == Rows5){
+        for (int y = 0; y < Rows5; y++){
+            for (int x = 0; x < Rows5; x++){
+                std::cout << _board5[y][x];
             }
             std::cout << std::endl;
         }
@@ -57,11 +58,11 @@ void Game::printBoard(Board board){
         
 }
 void Game::update(bool &gameOver,  std::array< std::array<char, 3>, 3> &_board3,  std::array< std::array<char, 5>, 5> &_board5, Player &player, Game &game, Board board){
-    player.updatePlayerOne(_boardSize, _numberOfPlayers, _board3, _board5);
-    printBoard(board);
+    player.updatePlayerOne(_boardSize, _board3, _board5);
+    printBoard(_board3, _board5, _boardSize);
     if (_numberOfPlayers == 2){
-        player.updatePlayerTwo(board._boardSize, _numberOfPlayers, _board3, _board5);
-        printBoard(board);
+        player.updatePlayerTwo(board._boardSize, _board3, _board5);
+        printBoard(_board3, _board5, _boardSize);
     }
     return;
 
