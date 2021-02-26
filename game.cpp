@@ -59,7 +59,7 @@ void Game::printBoard(std::array< std::array<char, Rows3>, Cols3> _board3,  std:
 }
 void Game::update(bool &gameOver,  std::array< std::array<char, Rows3>, Cols3> &_board3,  std::array< std::array<char, Rows5>, Cols5> &_board5, Player &player, Game &game, Board board){
     player.updatePlayerOne(board._boardSize, board._board3, board._board5);
-    printBoard(_board3, _board5, board._boardSize); //todo fuck all of this
+    printBoard(_board3, _board5, board._boardSize); //todo fuck all of this, too many different classes maybe, also std::array container doing stuff I don't understand in <array> file...  
     if (_numberOfPlayers == 2){
         player.updatePlayerTwo(board._boardSize, _board3, _board5);
         printBoard(_board3, _board5, _boardSize);
