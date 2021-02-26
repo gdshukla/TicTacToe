@@ -15,6 +15,6 @@ game.o: game.cpp game.hpp
 board.o: board.cpp board.hpp
 	g++ -c -g board.cpp
 player.o: player.cpp player.hpp board.hpp
-	c++ -c -g player.cpp 
+	g++ -c -g player.cpp 
 clean:
 	rm -f *.o *.out

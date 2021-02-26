@@ -115,28 +115,13 @@
                 imoveNumber = 4;
                 break;
         }
-
         if (_boardSize == 3){
             //todo update board 3x3
-            for (int j = 0; j < _boardSize; j++){
-                for (int i = 0; i < _boardSize; i++){
-                    if (i == imoveLetter && j == imoveNumber){
-                        _board3[j][i] = playerOneSymbol;
-                    }
-                }
-            }
-
+                        _board3[imoveNumber][imoveLetter] = playerOneSymbol;
         } else if (_boardSize == 5){
             // todo update board 5x5
-            for (int j = 0; j < _boardSize; j++){
-                for (int i = 0; i < _boardSize; i++){
-                    if (i == imoveLetter && j == imoveNumber){
-                        _board5[j][i] = playerOneSymbol;
+                        _board5[imoveNumber][imoveLetter] = playerOneSymbol;
                     }
-                }
-            }
-        }
-        
     }
 
     void Player::updatePlayerTwo(int &_boardSize, std::array< std::array<char, Rows3>, Cols3> &_board3,  std::array< std::array<char, Rows5>, Cols5> &_board5){

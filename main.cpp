@@ -28,19 +28,5 @@ int main(){
         game.checkWin(board._board3, board._board5, player, board, gameOver);
     }
 
-
-    //ask for board size, 3x3, 5x5
-
-    //ask for symbols
-
-    //maybe confirm or option to redo steps
-    //init and print board to screen
-    //player 1 turn
-    //player 2 turn
-    //check for win condition
-    //if win, print winner, print loser, and ask for rematch.
-
-
-
     return 0;
 }
