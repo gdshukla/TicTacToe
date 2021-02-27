@@ -6,6 +6,8 @@
 
 class Player : public Board{
 public:
+    Player();
+    ~Player();
     int getPlayerNumber();
     std::string getPlayerOneName();
     std::string getPlayerTwoName();

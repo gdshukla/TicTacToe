@@ -20,14 +20,14 @@ void Game::init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array
     std::cout << "** Tic Tac Toe **" << std::endl;
     _numberOfPlayers = player.getPlayerNumber();
 
-    char check2 = 'T';  //switch check to 'F' inside boardInit() to exit while loop
-    while (check2 == 'T'){
-    board.getBoardSize(check2, board._boardSize, board.Rows3 , board.Rows5);
+    char checkA = 'T';  //switch checkB to 'F' inside getBoardSize() to exit while loop
+    while (checkA == 'T'){
+    board.getBoardSize(checkA, board._boardSize, board.Rows3 , board.Rows5);
     }
 
-    char check = 'T';  //switch check to 'F' inside boardInit() to exit while loop
-    while (check == 'T'){
-    board.boardInit(board._boardSize, board._board3, board._board5, check);
+    char checkB = 'T';  //switch checkB to 'F' inside boardInit() to exit while loop
+    while (checkB == 'T'){
+    board.boardInit(board._boardSize, board._board3, board._board5, checkB);
     }
 
     player.getPlayerOneName();
@@ -72,7 +72,7 @@ void Game::checkWin(std::array< std::array<char, Rows3>, Cols3> _board3,  std::a
     // int vertFlag = 0;
     if(board._boardSize == Rows3){ 
         for(int col = 0; col < board.Cols3; col++){
-            for(int row = 0; row < board.Rows3; row++){ //todo check win for vertical and diagonal
+            for(int row = 0; row < board.Rows3; row++){ //todo checkB win for vertical and diagonal
                 if((board._board3[col][row] == player.playerOneSymbol) && (board._board3[col][row+1] == player.playerOneSymbol) && (board._board3[col][row+2] == player.playerOneSymbol)){
                     std::cout << player.playerOneName << " wins!!" << std::endl;
                     endgame = true;
@@ -82,7 +82,7 @@ void Game::checkWin(std::array< std::array<char, Rows3>, Cols3> _board3,  std::a
         }
     } else if(board._boardSize == board.Rows5){
         for (int col = 0; col < board.Cols5; col++){
-            for (int row = 0; row < board.Rows5; row++){ //todo check win for vertical and diagonal
+            for (int row = 0; row < board.Rows5; row++){ //todo checkB win for vertical and diagonal
                 if((board._board5[col][row] == player.playerOneSymbol) && (board._board5[col][row+1] == player.playerOneSymbol) && (board._board5[col][row+2] == player.playerOneSymbol)
                 && (board._board5[col][row+3] == player.playerOneSymbol) && (board._board5[col][row+4] == player.playerOneSymbol)){
                     std::cout << player.playerOneName << " wins!!" << std::endl;

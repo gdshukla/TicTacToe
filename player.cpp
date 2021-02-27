@@ -3,14 +3,16 @@
 #include <array>
 #include <string>
 #include "player.hpp"
-#include "board.hpp"
+//#include "board.hpp"
 
+    Player::Player()
+    {
 
-//#include <typeinfo>
+    }
+    Player::~Player()
+    {
 
-
-
-
+    }
     int Player::getPlayerNumber(){
         std::cout << "How many players? (Enter 1 or 2)" << std::endl;
         int input;
@@ -116,12 +118,10 @@
                 break;
         }
         if (_boardSize == 3){
-            //todo update board 3x3
                         _board3[imoveNumber][imoveLetter] = playerOneSymbol;
         } else if (_boardSize == 5){
-            // todo update board 5x5
                         _board5[imoveNumber][imoveLetter] = playerOneSymbol;
-                    }
+        }
     }
 
     void Player::updatePlayerTwo(int &_boardSize, std::array< std::array<char, Rows3>, Cols3> &_board3,  std::array< std::array<char, Rows5>, Cols5> &_board5){
@@ -178,27 +178,10 @@
                 imoveNumber = 4;
                 break;
         }
-
         if (_boardSize == 3){
-            for (int j = 0; j < Cols3; j++){
-                for (int i = 0; i < Rows3; i++){
-                    if (i == imoveLetter && j == imoveNumber){
-                        _board3[j][i] = playerTwoSymbol;
-                    }
-                }
-            }
-
+                        _board3[imoveNumber][imoveLetter] = playerTwoSymbol;
         } else if (_boardSize == Rows5){
-            
-            for (int j = 0; j < Cols5; j++){
-                for (int i = 0; i < Rows5; i++){
-                    if (i == imoveLetter && j == imoveNumber){
-                        _board5[j][i] = playerTwoSymbol;
-                    }
-                }
-            }
+                        _board5[imoveNumber][imoveLetter] = playerTwoSymbol;
         }
     }
-
-    //todo check win condition with loop
 
