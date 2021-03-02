@@ -1,5 +1,7 @@
 
 #include <iostream>
+#include <limits>
+#include <regex>
 #include <array>
 #include <string>
 #include "player.hpp"
@@ -18,8 +20,14 @@
     }
     int Player::getPlayerAmount(){
         std::cout << "1 Player or 2 Players?" << std::endl;
-        if (std::cin.fail()){  //todo needs a while loop here
+        while(std::cin.fail()){ 
+            // Validate input; copy paste from player.hpp comment-->
+            // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
+
+            if (std::cin.fail()){ 
             std::cout << "Input not recognized." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         } else {
             std::cin >> playerAmount;
@@ -27,6 +35,11 @@
             return playerAmount;
         }
         return 55;
+        // End While Loop; playerAmount should be validated first as string input, using <regex>,
+        // then converted to integer playerAmount and returned.
+        
+        }
+
     }
 
 
