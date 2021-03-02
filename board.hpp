@@ -6,7 +6,10 @@ class Board {
 public:
     Board();
     ~Board();
-    int _boardSize;
+    Board initBoard(Board& Board);
+
+
+/*     int _boardSize;
     static const int Rows3 = 3;
     static const int Cols3 = 3;
     static const int Rows5 = 5;
@@ -17,5 +20,5 @@ public:
     
 
     std::array< std::array<char, Rows3 >, Cols3>  _board3;
-    std::array< std::array<char, Rows5 >, Cols5>  _board5;
+    std::array< std::array<char, Rows5 >, Cols5>  _board5; */
 };

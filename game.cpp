@@ -15,8 +15,15 @@ Game::~Game()
 
 }
 
+void Game::run(){
+    Player player1, player2;
+    Board board1, board2;
+    Player initPlayers(Player& Players);
+    Board initBoards(Board& Boards);
+}
 
-void Game::init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player &player, Board &board){
+
+/* void Game::init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player &player, Board &board){
     std::cout << "** Tic Tac Toe **" << std::endl;
     _numberOfPlayers = player.getPlayerNumber();
 
@@ -93,4 +100,4 @@ void Game::checkWin(std::array< std::array<char, Rows3>, Cols3> _board3,  std::a
         }
     } 
         return;
-}
+} */

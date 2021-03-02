@@ -13,7 +13,24 @@
     {
 
     }
-    int Player::getPlayerNumber(){
+    void Player::initPlayers(){
+        getPlayerAmount();
+    }
+    int Player::getPlayerAmount(){
+        std::cout << "1 Player or 2 Players?" << std::endl;
+        if (std::cin.fail()){  //todo needs a while loop here
+            std::cout << "Input not recognized." << std::endl;
+
+        } else {
+            std::cin >> playerAmount;
+
+            return playerAmount;
+        }
+        return 55;
+    }
+
+
+    /* int Player::getPlayerNumber(){
         std::cout << "How many players? (Enter 1 or 2)" << std::endl;
         int input;
         std::cin >> input;
@@ -184,4 +201,4 @@
                         _board5[imoveNumber][imoveLetter] = playerTwoSymbol;
         }
     }
-
+ */

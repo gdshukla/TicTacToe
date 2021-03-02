@@ -1,14 +1,25 @@
 #pragma once
 #include <string>
-#include <array>
-#include "board.hpp"
+//#include <array>
+//#include "board.hpp"
 
 
-class Player : public Board{
+class Player /* : public Board */{
 public:
     Player();
     ~Player();
-    int getPlayerNumber();
+    void initPlayers();
+    int getPlayerAmount();
+
+
+private:
+    int playerAmount;
+    char playerOneSymbol;
+    char playerTwoSymbol;
+    std::string playerOneName;
+    std::string playerTwoName;
+    
+    /* int getPlayerNumber();
     std::string getPlayerOneName();
     std::string getPlayerTwoName();
     char getPlayerOneSymbol();
@@ -21,5 +32,5 @@ public:
     std::string playerTwoName;
     char playerOneSymbol;
     char playerTwoSymbol;
-    int _numberOfPlayers;
+    int _numberOfPlayers; */
 };

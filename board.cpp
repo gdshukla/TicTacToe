@@ -10,9 +10,14 @@
     Board::~Board(){
 
     }
+    Board Board::initBoard(Board& Board){
+        
+    }
 
 
-    void Board::getBoardSize(char &checkA, int &_boardSize,  const unsigned int &Rows3,  const unsigned int &Rows5){
+
+
+    /* void Board::getBoardSize(char &checkA, int &_boardSize,  const unsigned int &Rows3,  const unsigned int &Rows5){
     std::cout << "What size game?  (Enter a 3 for a 3 x 3 game, or 5 for a 5 x 5 game)" << std::endl;
     int input;
     std::cin >> input;
@@ -80,6 +85,6 @@
         boardInit(_boardSize, _board3, _board5, checkB);
         }
         return;
-    }
+    } */
 
 
