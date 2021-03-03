@@ -19,7 +19,7 @@
         getPlayerAmount();
     }
     int Player::getPlayerAmount(){
-        std::cout << "1 Player or 2 Players?" << std::endl;
+        std::cout << "Enter (1) Player or (2) Players?" << std::endl;
         while(std::cin.fail()){ 
             // Validate input; copy paste from player.hpp comment-->
             // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
@@ -30,7 +30,10 @@
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         } else {
-            std::cin >> playerAmount;
+            std::basic_regex<std::string> s = 1;
+            if (std::cin >> playerAmountString == (std::basic_regex& s = ) ){
+
+            }
 
             return playerAmount;
         }

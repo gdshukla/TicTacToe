@@ -13,7 +13,7 @@ public:
 
 
 private:
-    std::string playerAmount;  // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
+    std::string playerAmountString;  // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
     int playerAmount;
     char playerOneSymbol;
     char playerTwoSymbol;
