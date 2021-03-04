@@ -11,7 +11,7 @@
 
     }
     Board Board::initBoard(Board& Board){
-        
+        return Board;
     }
 
 
