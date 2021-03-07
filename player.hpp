@@ -9,10 +9,12 @@ class Player /* : public Board */{
 public:
     Player();
     ~Player();
-    //get
+    //getters
     std::string getPlayerAmountString();
     std::regex getRegex();
-    //set
+    //setters
+
+    //main functions
     void initPlayers();
     int getPlayerAmount(std::string pas);
 

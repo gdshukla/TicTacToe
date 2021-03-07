@@ -22,6 +22,7 @@
     void Player::initPlayers(){
         getPlayerAmount(playerAmountString);
     }
+    //main functions
     int Player::getPlayerAmount(std::string playerAmountString){
         std::string pas;  // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
         std::regex regex("[1-2]"); //todo update to include multiple variants that could possibly be input, eg. "one player", or "1 player", or "one", etc.etc.etc.
