@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <regex>
 //#include <array>
 //#include "board.hpp"
 
@@ -8,8 +9,13 @@ class Player /* : public Board */{
 public:
     Player();
     ~Player();
+    //get
+    std::string getPlayerAmountString();
+    std::regex getRegex();
+    //set
     void initPlayers();
-    int getPlayerAmount();
+    int getPlayerAmount(std::string pas);
+
 
 
 private:
@@ -18,6 +24,8 @@ private:
     char playerTwoSymbol;
     std::string playerOneName;
     std::string playerTwoName;
+    std::string playerAmountString;
+    std::regex regex;
     
     /* int getPlayerNumber();
     std::string getPlayerOneName();

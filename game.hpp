@@ -10,6 +10,8 @@ public:
     Game();
     ~Game();
     void run();
+    void updateGame(Player& PlayerClass);
+
 
 
 /*     void init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player &player, Board &board);

@@ -15,11 +15,15 @@
     {
 
     }
+    //getters
+    std::string Player::getPlayerAmountString(){return playerAmountString;}
+    std::regex Player::getRegex(){return regex;}
+    //setters
     void Player::initPlayers(){
-        getPlayerAmount();
+        getPlayerAmount(playerAmountString);
     }
-    int Player::getPlayerAmount(){
-        std::string playerAmountString;  // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
+    int Player::getPlayerAmount(std::string playerAmountString){
+        std::string pas;  // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
         std::regex regex("[1-2]"); //todo update to include multiple variants that could possibly be input, eg. "one player", or "1 player", or "one", etc.etc.etc.
 
         std::cout << "Enter (1) Player or (2) Players?" << std::endl;
@@ -35,6 +39,7 @@
         } else {
             std::string matchResults;
             if (std::regex_search(playerAmountString, regex)){
+                std::cout << "hello from inside getPlayerAmount(), inside else statement (cin.fail())" << std::endl;
                 std::cout << std::regex_search(playerAmountString, regex) << std::endl; //todo delete this testing line
             }
 
