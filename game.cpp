@@ -25,7 +25,7 @@ void Game::run(){
 }
 void Game::updateGame(){
     std::string matchResults;
-    std::cout << std::regex_search(getPlayerAmount(getPlayerAmountString()).start(), getRegex(),matchResults) << std::endl;
+    std::cout << std::regex_search(getPlayerAmountString(), getRegex()) << std::endl;
 }
 
 /* void Game::init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player &player, Board &board){
