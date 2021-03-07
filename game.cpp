@@ -3,6 +3,7 @@
 #include "player.hpp"
 #include <iostream>
 #include <array>
+#include <regex>
 //#include <string>
 
 
@@ -20,10 +21,11 @@ void Game::run(){
     Board board1, board2;
     Player initPlayers(Player& Players);
     Board initBoards(Board& Boards);
-    void updateGame();
+    updateGame();
 }
-void Game::updateGame(Player& PlayerClass){
-    std::cout << std::regex_search(getPlayerAmount(getPlayerAmountString()), getRegex()) << std::endl;
+void Game::updateGame(){
+    std::string matchResults;
+    std::cout << std::regex_search(getPlayerAmount(getPlayerAmountString()).start(), getRegex(),matchResults) << std::endl;
 }
 
 /* void Game::init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player &player, Board &board){

@@ -10,7 +10,7 @@ public:
     Game();
     ~Game();
     void run();
-    void updateGame(Player& PlayerClass);
+    void updateGame();
 
 
 
