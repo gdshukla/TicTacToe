@@ -42,6 +42,7 @@
             if (std::regex_search(playerAmountString, regex)){
                 std::cout << "hello from inside getPlayerAmount(), inside else statement (cin.fail())" << std::endl;
                 std::cout << std::regex_search(playerAmountString, regex) << std::endl; //todo delete this testing line
+                getchar(); //todo delete this pause line.
             }
 
             return playerAmount;
