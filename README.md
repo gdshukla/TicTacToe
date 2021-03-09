@@ -7,5 +7,5 @@ Online Multiplayer is a work in progress, sorry.
 
 <img src="https://i.ibb.co/qg0j9Rg/Tic-Tac-Toe.png" alt="Tic Tac Toe game logo.">
 
-#currently working on:
+<h1>currently working on:</h1>
 <img src="https://i.ibb.co/vHjX40H/get-Player-Amount-jpeg.jpg" alt="get player amount function flow chart" border="5">
