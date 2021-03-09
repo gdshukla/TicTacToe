@@ -1,4 +1,4 @@
-# TicTacToe
+
 <h1>TicTacToe Single Player, Multiplayer, Online Multiplayer</h1>
 
 <p>Online Multiplayer is a work in progress, sorry.</p>
