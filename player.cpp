@@ -39,7 +39,6 @@
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         } else {
-            std::string matchResults;
             if (std::regex_search(playerAmountString, regex)){
                 std::cout << "hello from inside getPlayerAmount(), inside else statement (cin.fail())" << std::endl;
                 std::cout << std::regex_search(playerAmountString, regex) << std::endl; //todo delete this testing line

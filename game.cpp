@@ -19,14 +19,15 @@ Game::~Game()
 void Game::run(bool& gO){
     Player players;
     Board board;
-    Player::initPlayers(players);
+    players.initPlayers(players);
     board.initBoard(board);
     updateGame(gO, board, players);
 }
 void Game::updateGame(bool& gO, Board& Board, Player& Players){
     int i = 0;
     while (i < 3){
-        getchar();
+        std::string inputString;
+        std::getline(std::cin, inputString);
         i++;
     }
     gO = true;
