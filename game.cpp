@@ -1,6 +1,6 @@
 #include "game.hpp"
-#include "board.hpp"
-#include "player.hpp"
+/* #include "board.hpp"
+#include "player.hpp" */
 #include <iostream>
 #include <array>
 #include <regex>
@@ -16,15 +16,20 @@ Game::~Game()
 
 }
 
-void Game::run(){
-    Player player1, player2;
-    Board board1, board2;
-    Player initPlayers(Player& Players);
-    Board initBoards(Board& Boards);
-    updateGame();
+void Game::run(bool& gO){
+    Player players;
+    Board board;
+    Player::initPlayers(players);
+    board.initBoard(board);
+    updateGame(gO, board, players);
 }
-void Game::updateGame(){
-    
+void Game::updateGame(bool& gO, Board& Board, Player& Players){
+    int i = 0;
+    while (i < 3){
+        getchar();
+        i++;
+    }
+    gO = true;
 }
 
 /* void Game::init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player &player, Board &board){

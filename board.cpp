@@ -10,8 +10,8 @@
     Board::~Board(){
 
     }
-    Board Board::initBoard(Board& Board){
-        return Board;
+    void Board::initBoard(Board& Board){
+        
     }
 
 

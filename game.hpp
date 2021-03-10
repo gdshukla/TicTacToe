@@ -1,7 +1,7 @@
 #pragma once
 #include <array>
 #include "player.hpp"
-//#include "board.hpp"
+#include "board.hpp"
 
 
 
@@ -9,8 +9,8 @@ class Game : public Player {
 public:
     Game();
     ~Game();
-    void run();
-    void updateGame();
+    void run(bool& gO);
+    void updateGame(bool& gO, Board& Board, Player& Players);
 
 
 

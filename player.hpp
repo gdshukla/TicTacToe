@@ -15,7 +15,7 @@ public:
     //setters
 
     //main functions
-    void initPlayers();
+    void initPlayers(Player& Players);
     int getPlayerAmount(std::string pas);
 
 

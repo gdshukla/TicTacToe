@@ -26,7 +26,7 @@ int main(){
     while (!gameOver){
 /*         game.update(gameOver, board._board3, board._board5, player, game, board);
         game.checkWin(board._board3, board._board5, player, board, gameOver); */
-        game.run();
+        game.run(gameOver);
     }
 
     return 0;
