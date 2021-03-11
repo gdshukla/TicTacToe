@@ -5,7 +5,7 @@
 
 
 
-class Game : public Player { 
+class Game { 
 public:
     Game();
     ~Game();
