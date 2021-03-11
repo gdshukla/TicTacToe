@@ -9,7 +9,8 @@
 
     Player::Player()
     {
-
+        setPlayerAmount(playerAmountString);
+        setPlayerNames();
     }
     Player::~Player()
     {
@@ -22,8 +23,8 @@
 
     //main functions
     void Player::initPlayers(){
-        setPlayerAmount(playerAmountString);
-        setPlayerNames();
+        
+        
     }
     int Player::setPlayerAmount(std::string playerAmountString){
         std::string pas;  // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.

@@ -19,7 +19,7 @@ Game::~Game()
 void Game::run(bool& gO){
     Player players;
     Board board;
-    players.initPlayers();
+    //players.initPlayers();
     board.initBoard();
     updateGame(gO, board, players);
 }
