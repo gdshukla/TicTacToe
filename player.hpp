@@ -15,7 +15,7 @@ public:
     //setters
 
     //main functions
-    void initPlayers();
+    //void initPlayers();
     int setPlayerAmount(std::string pas);
     void setPlayerNames();
 
