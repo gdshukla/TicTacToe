@@ -19,18 +19,18 @@ Game::~Game()
 void Game::run(bool& gO){
     Player players;
     Board board;
-    players.initPlayers(players);
-    board.initBoard(board);
+    players.initPlayers();
+    board.initBoard();
     updateGame(gO, board, players);
 }
-void Game::updateGame(bool& gO, Board& Board, Player& Players){
-    int i = 0;
+void Game::updateGame(bool& gO, Board &Board, Player &Players){
+/*     int i = 0;   //todo delete this test code
     while (i < 3){
         std::string inputString;
         std::getline(std::cin, inputString);
         i++;
     }
-    gO = true;
+    gO = true; */
 }
 
 /* void Game::init(std::array< std::array<char, Rows3>, Cols3> _board3,  std::array< std::array<char, Rows5>, Cols5> _board5, Player &player, Board &board){

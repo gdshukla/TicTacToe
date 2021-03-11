@@ -19,25 +19,28 @@
     std::string Player::getPlayerAmountString(){return playerAmountString;}
     std::regex Player::getRegex(){return regex;}
     //setters
-    void Player::initPlayers(Player& Players){
-        getPlayerAmount(playerAmountString);
-    }
+
     //main functions
-    int Player::getPlayerAmount(std::string playerAmountString){
+    void Player::initPlayers(){
+        setPlayerAmount(playerAmountString);
+        setPlayerNames();
+    }
+    int Player::setPlayerAmount(std::string playerAmountString){
         std::string pas;  // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
         std::regex regex("[1-2]"); //todo update to include multiple variants that could possibly be input, eg. "one player", or "1 player", or "one", etc.etc.etc.
         std::cout << "Enter (1) Player or (2) Players?" << std::endl;
 
-        while(std::cin.fail()){ 
+        while(!std::cin.fail()){ 
             // Validate input; copy paste from player.hpp comment-->
             // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
+            std::cin >> playerAmountString;
             std::cout << "first statement inside while(std::cin.fail()){}" << std::endl;//todo delete test line
 
-            if (std::cin.fail()){ 
+            if (std::cin.fail() == std::regex_search(playerAmountString, regex)){ 
             std::cout << "Input not recognized." << std::endl;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
+            return this->playerAmount;
         } else {
             if (std::regex_search(playerAmountString, regex)){
                 std::cout << "hello from inside getPlayerAmount(), inside else statement (cin.fail())" << std::endl;
@@ -45,14 +48,29 @@
                 getchar(); //todo delete this pause line.
             }
 
-            return playerAmount;
+            return this->playerAmount;
         }
         return 55;
         // End While Loop; playerAmount should be validated first as string input, using <regex>,
         // then converted to integer playerAmount and returned.
-        
         }
         return 0;
+    }
+    void Player::setPlayerNames(){
+        if (this->playerAmount == 1){
+            // one player game
+            std::cout << "What is player's Name : ";
+            std::cin >> this->playerOneName;
+        } else if (this->playerAmount == 2){
+            // two player game
+            std::cout << "What is player one's Name : ";
+            std::cin >> this->playerOneName;
+            std::cout << "What is player two's Name : ";
+            std::cin >> this->playerTwoName;
+        } else {
+            // error
+            std::cout << "setPlayerNames() error; made it to else statement." << std::endl;
+        }
     }
 
 

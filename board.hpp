@@ -6,7 +6,7 @@ class Board {
 public:
     Board();
     ~Board();
-    void initBoard(Board& Board);
+    void initBoard();
 
 
 /*     int _boardSize;

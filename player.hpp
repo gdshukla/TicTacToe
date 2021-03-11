@@ -15,8 +15,9 @@ public:
     //setters
 
     //main functions
-    void initPlayers(Player& Players);
-    int getPlayerAmount(std::string pas);
+    void initPlayers();
+    int setPlayerAmount(std::string pas);
+    void setPlayerNames();
 
 
 
@@ -24,10 +25,11 @@ private:
     int playerAmount;
     char playerOneSymbol;
     char playerTwoSymbol;
-    std::string playerOneName;
-    std::string playerTwoName;
     std::string playerAmountString;
     std::regex regex;
+
+    std::string playerOneName;
+    std::string playerTwoName;
     
     /* int getPlayerNumber();
     std::string getPlayerOneName();
