@@ -9,6 +9,7 @@
 
 Game::Game()
 {
+    board.initBoard();
 
 }
 Game::~Game()
@@ -17,10 +18,7 @@ Game::~Game()
 }
 
 void Game::run(bool& gO){
-    Player players;
-    Board board;
     //players.initPlayers();
-    board.initBoard();
     updateGame(gO, &board, &players);
 }
 void Game::updateGame(bool& gO, Board *Board, Player *Players){
