@@ -27,30 +27,35 @@
     } */
     int Player::setPlayerAmount(std::string playerAmountString){
         std::string pas;  // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
-        std::regex regex("[^1$]"); //todo update to include multiple variants that could possibly be input, eg. "one player", or "1 player", or "one", etc.etc.etc.
+        std::regex regex("[^1-2$]"); //todo update to include multiple variants that could possibly be input, eg. "one player", or "1 player", or "one", etc.etc.etc.
         std::cout << "Enter (1) Player or (2) Players?" << std::endl;
+        std::cin >> playerAmountString;
+        //template <class CharT, class Traits = std::regex_traits<CharT> > class basic_regex;
 
         while(!std::cin.fail()){ 
             // Validate input; copy paste from player.hpp comment-->
             // Use <regex> to validate input of string to check for 1 or 2, then convert to the integer playerAmount.
-            std::cin >> playerAmountString;
             std::cout << "first statement inside while(std::cin.fail()){}; playerAmountString:"<< playerAmountString << std::endl;//todo delete test line
             std::cout << "std::cin.fail() is : " <<std::cin.fail() << std::endl;
-            if (std::cin.fail() != std::regex_search(playerAmountString, regex)){ 
+            if (!std::regex_replace(playerAmountString, regex,)){  //todo fix regex_replace/try regex_replace 3-6 on cppreference.
             std::cout << "Input not recognized." << std::endl;
+            std::cout << regex_replace(playerAmountString, regex) << std::endl;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            return this->playerAmount;
+            
         } else {
-            if (std::regex_search(playerAmountString, regex)){
-                std::cout << "hello from inside getPlayerAmount(), inside else statement (cin.fail())" << std::endl;
-                std::cout << std::regex_search(playerAmountString, regex) << std::endl; //todo delete this testing line
-                
-                getchar(); //todo delete this pause line.
+                std::cout << "hello from inside setPlayerAmount(), inside else statement (cin.fail())" << std::endl;
+                std::cout << "std::regex_replace(playerAmountString, regex) is : " << std::regex_replace(playerAmountString, regex) << std::endl; //todo delete this testing line
+
+                //todo forgot to set playerAmount to correct integer values, do that!
+                std::string m;
+                if (std::regex_replace(playerAmountString, regex, ) == "1"){
+
+                }else {
+
+                }
+                return this->playerAmount;
             }
-            //todo forgot to set playerAmount to correct integer values, do that!
-            return this->playerAmount;
-        }
         return 55;
         // End While Loop; playerAmount should be validated first as string input, using <regex>,
         // then converted to integer playerAmount and returned.

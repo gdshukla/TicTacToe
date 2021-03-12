@@ -21,9 +21,9 @@ void Game::run(bool& gO){
     Board board;
     //players.initPlayers();
     board.initBoard();
-    updateGame(gO, board, players);
+    updateGame(gO, &board, &players);
 }
-void Game::updateGame(bool& gO, Board &Board, Player &Players){
+void Game::updateGame(bool& gO, Board *Board, Player *Players){
 /*     int i = 0;   //todo delete this test code
     while (i < 3){
         std::string inputString;
