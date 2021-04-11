@@ -1,35 +1,17 @@
 #pragma once
 #include <string>
-#include <regex>
-//#include <array>
-//#include "board.hpp"
-
-
-class Player /* : public Board */{
-public:
-    Player();
-    ~Player();
-    //getters
-    std::string getPlayerAmountString();
-    std::regex getRegex();
-    //setters
-
-    //main functions
-    //void initPlayers();
-    int setPlayerAmount(std::string pas);
-    void setPlayerNames();
+#include <iostream>
 
 
 
-private:
-    int playerAmount;
-    char playerOneSymbol;
-    char playerTwoSymbol;
-    std::string playerAmountString;
-    std::regex regex;
-
-    std::string playerOneName;
-    std::string playerTwoName;
-    
-    
+struct Player
+{
+    Player( std::string _N, char _S){ std::cout << "Player is created : " << _N << " with symbol " << _S << std::endl; name_ = _N; symbol_ = _S; }
+    Player(Player&&) = default;
+    ~Player(){ std::cout << "Player " << name_ << " is destroyed." << std::endl; }
+    void sayName() { std::cout << "Player " << name_ << " rules!" << std::endl; }
+    std::string getName(){return name_;}
+//private:
+    std::string name_;
+    char symbol_;
 };

@@ -1,13 +1,10 @@
-
 #include "game.hpp"
-#include <iostream>
+//#include <iostream>
 
-bool gameOver = false;
 
 int main(){
-    Game game;
-    while (!gameOver){
-        game.run(gameOver);
-    }
+    Game game; // TODO - April 10, 2021; 8:02am, use Game c-tor to initialize player_ vector.
+    game.run(game.getGameOver() ,game.getPlayerAmountStringForRegex(), game.getPlayerAmount(), game.players_);
+
     return 0;
 }
