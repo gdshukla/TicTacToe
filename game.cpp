@@ -30,6 +30,7 @@ Game::Game()
         std::cout << "i is " << i << std::endl;
     }   
     // std::cout << "players_[i]->name_ OUTside for loop is : " << players_[i]->name_ << std::endl;
+    // lets just print player details fir shits and giggles
     for(auto &player: players_){
         std::cout << "Name: " << player->name_ << std::endl;
         std::cout << "Symbol: " << player->symbol_ << std::endl;
