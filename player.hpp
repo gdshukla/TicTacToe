@@ -2,16 +2,24 @@
 #include <string>
 #include <iostream>
 
-
-
-struct Player
+class Player
 {
-    Player( std::string _N, char _S){ std::cout << "Player is created : " << _N << " with symbol " << _S << std::endl; name_ = _N; symbol_ = _S; }
+public:
+    Player( std::string _N, char _S): name_(_N), symbol_ (_S)
+    { 
+        std::cout << "Player is created : " << _N << " with symbol " << _S << std::endl; 
+    }
     Player(Player&&) = default;
-    ~Player(){ std::cout << "Player " << name_ << " is destroyed." << std::endl; }
-    void sayName() { std::cout << "Player " << name_ << " rules!" << std::endl; }
+    ~Player(){ 
+        std::cout << "Player " << name_ << " is destroyed." << std::endl; 
+    }
+    void sayName() { 
+        std::cout << "Player " << name_ << " rules!" << std::endl; 
+    }
     std::string getName(){return name_;}
-//private:
+    char getSymbol(){return symbol_;}
+
+private:
     std::string name_;
     char symbol_;
 };

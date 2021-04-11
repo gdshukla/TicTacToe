@@ -25,8 +25,8 @@ Game::Game()
     // lets just print player details fir shits and giggles
     int index = 1;
     for(auto &player: players_){
-        std::cout << index++ << ". Name: " << player->name_ << " ";
-        std::cout << "Symbol: " << player->symbol_ << std::endl;
+        std::cout << index++ << ". Name: " << player->getName() << " ";
+        std::cout << "Symbol: " << player->getSymbol() << std::endl;
     }
 
 }
